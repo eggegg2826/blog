@@ -1,24 +1,148 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>ChitChat BA連接樹</title>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138666652-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-138666652-2');
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程報名網站</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .banner {
+            background: url('banner-image.jpg') no-repeat center center;
+            background-size: cover;
+            height: 300px;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .course-carousel .carousel-item {
+            text-align: center;
+        }
+        .footer {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+        .map-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .map {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .map .region {
+            cursor: pointer;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+    </style>
 </head>
 <body>
-  <center>
-  <img with="300" heigh="200" src="https://scontent.ftpe7-4.fna.fbcdn.net/v/t1.6435-9/187122750_120344060187564_6333029538006043892_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=x8ikaVfx868AX83LIA9&tn=rrAZbAv-HaSql7xJ&_nc_ht=scontent.ftpe7-4.fna&oh=00_AT_yNsrLq5ut_OC489v5f25lqycIxXLSJaGzQ9IFVYy4zw&oe=624364B9">
-  <p>下面連結是ChitChat BA的連接樹</p>
-  <button type="button"
-          style="background-color:#FFF0D4;width:500px;height:40px;font-size:20px;"
-          onclick="location.href='https://www.facebook.com/chitchatba'">點我收聽ChitChat BA
-  </button>
-  </center>
+
+<header class="bg-dark text-white text-center py-3">
+    <h1>課程報名網站</h1>
+    <nav class="nav justify-content-center">
+        <a class="nav-link text-white" href="#">首頁</a>
+        <a class="nav-link text-white" href="#">課程介紹</a>
+        <a class="nav-link text-white" href="#">聯絡我們</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <h2>目前課程公告</h2>
+    <button class="btn btn-primary" onclick="window.location.href='#registration-form'">點擊報名</button>
+</section>
+
+<section class="container my-5">
+    <h3 class="text-center mb-4">課程介紹</h3>
+    <div id="courseCarousel" class="carousel slide course-carousel" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <h4>課程 1</h4>
+                <p>課程簡介 1</p>
+                <button class="btn btn-primary" onclick="window.location.href='#registration-form'">報名</button>
+            </div>
+            <!-- 重複上述結構添加更多課程 -->
+        </div>
+        <a class="carousel-control-prev" href="#courseCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#courseCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+
+<section class="map-container">
+    <h3 class="text-center mb-4">課程地點</h3>
+    <div class="map">
+        <svg viewBox="0 0 300 500">
+            <!-- 這裡插入台灣SVG地圖，並為每個地區添加 class="region" 和 id -->
+            <!-- 範例: -->
+            <g id="north" class="region">
+                <!-- 北部地區的SVG路徑 -->
+            </g>
+            <g id="central" class="region">
+                <!-- 中部地區的SVG路徑 -->
+            </g>
+            <g id="south" class="region">
+                <!-- 南部地區的SVG路徑 -->
+            </g>
+            <g id="east" class="region">
+                <!-- 東部地區的SVG路徑 -->
+            </g>
+        </svg>
+    </div>
+    <div class="tooltip" id="tooltip"></div>
+</section>
+
+<section id="registration-form" class="container my-5">
+    <h3 class="text-center mb-4">報名表單</h3>
+    <form>
+        <!-- 報名表單內容 -->
+    </form>
+</section>
+
+<footer class="footer">
+    <p>聯絡信息：contact@example.com</p>
+    <p>© 2024 課程報名網站. 保留所有權利.</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.region').hover(function() {
+            var region = $(this).attr('id');
+            var tooltip = $('#tooltip');
+            var dates = {
+                north: '7月10日',
+                central: '7月15日',
+                south: '7月20日',
+                east: '7月25日'
+            };
+            tooltip.text(region.charAt(0).toUpperCase() + region.slice(1) + '地區課程日期: ' + dates[region]);
+            tooltip.css({
+                top: event.pageY + 10,
+                left: event.pageX + 10,
+                display: 'block'
+            });
+        }, function() {
+            $('#tooltip').hide();
+        });
+    });
+</script>
 </body>
 </html>
