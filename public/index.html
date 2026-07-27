@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="這是部署在 Google Cloud Run 的個人部落格。">
+  <title>我的部落格</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/">我的部落格</a>
+      <nav aria-label="主要導覽">
+        <a href="#home">首頁</a>
+        <a href="#articles">文章</a>
+        <a href="#about">關於我</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <p class="eyebrow">WELCOME TO MY BLOG</p>
+        <h1>記錄工作、學習與生活中的每一步</h1>
+        <p class="hero-text">
+          這個網站已成功連接 GitHub，並透過 Google Cloud Run 自動部署。
+        </p>
+        <a class="button" href="#articles">閱讀文章</a>
+      </div>
+    </section>
+
+    <section id="articles" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">LATEST POSTS</p>
+          <h2>最新文章</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <p class="card-meta">網站建置 · 5 分鐘閱讀</p>
+            <h3>我的第一個 Cloud Run 網站</h3>
+            <p>從 GitHub 原始碼、Buildpacks 到公開網址，完成第一次自動部署。</p>
+            <a href="#" class="text-link">閱讀更多</a>
+          </article>
+
+          <article class="card">
+            <p class="card-meta">學習筆記 · 4 分鐘閱讀</p>
+            <h3>如何規劃一個簡單的個人部落格</h3>
+            <p>先確認內容架構，再逐步加入文章頁、分類、搜尋與後台功能。</p>
+            <a href="#" class="text-link">閱讀更多</a>
+          </article>
+
+          <article class="card">
+            <p class="card-meta">成長紀錄 · 3 分鐘閱讀</p>
+            <h3>把想法做成真正可以瀏覽的網頁</h3>
+            <p>不用一開始就追求複雜功能，先完成一個可以公開使用的版本。</p>
+            <a href="#" class="text-link">閱讀更多</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <div class="container about">
+        <div>
+          <p class="eyebrow">ABOUT</p>
+          <h2>關於這個網站</h2>
+        </div>
+        <p>
+          目前這是一個純前端的示範部落格。之後可以繼續加入文章內頁、
+          管理後台、資料庫、自訂網域與 Google Analytics。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© <span id="year"></span> 我的部落格</p>
+      <p>Powered by Google Cloud Run</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
