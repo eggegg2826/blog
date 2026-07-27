@@ -1,6 +1,6 @@
 # Blog Page — Google Cloud Run
 
-這是一個可直接部署到 Google Cloud Run 的簡易部落格網站。
+這是一個可直接部署到 Google Cloud Run 的簡易部落格網站
 
 ## GitHub 儲存庫結構
 
